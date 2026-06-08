@@ -29,5 +29,9 @@ local function requests_get_player_userdata(iCid)
     write_io_csv("rates.csv", requests_get_rates())
 end
 
-make_dir_player_userdata()
-requests_get_player_userdata(1)
+if arg[1] then
+    make_dir_player_userdata()
+    requests_get_player_userdata(arg[1])
+else
+    print("Usage: main.lua {CHAR_ID}")
+end
